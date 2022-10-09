@@ -19,6 +19,27 @@
   ],
   "main": "./dist/extension.js",
   "contributes": {
+    "languages": [
+      {
+        "id": "fkl",
+        "mimetypes": ["language/fkl"],
+        "filenamePatterns": ["*.fkl"],
+        "aliases": [
+          "fkl"
+        ],
+        "extensions": [
+          ".fkl"
+        ],
+        "configuration": "./defs/language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "fkl",
+        "scopeName": "source.fkl",
+        "path": "./defs/fkl.tmLanguage.json"
+      }
+    ],
     "commands": [
       {
         "command": "vscode-fkl.helloWorld",
