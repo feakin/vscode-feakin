@@ -11,6 +11,7 @@ export class FklCompletionItemProvider
     position: vscode.Position,
     token: vscode.CancellationToken
   ): Promise<vscode.CompletionItem[]> {
+    console.log("?????????");
     return [
       {
         label: "hello",
