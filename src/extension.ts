@@ -25,9 +25,10 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.languages.registerCompletionItemProvider(
       { pattern: "**/*.fkl", scheme: "file" },
-      new FklCompletionItemProvider()
-    ),
-    " "
+      new FklCompletionItemProvider(),
+      ".",
+      " "
+    )
   );
 }
 

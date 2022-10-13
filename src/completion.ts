@@ -6,6 +6,10 @@ import * as fs from "fs";
 export class FklCompletionItemProvider
   implements vscode.CompletionItemProvider
 {
+  constructor() {
+    console.log("??????????????????????????????");
+  }
+
   public async provideCompletionItems(
     document: vscode.TextDocument,
     position: vscode.Position,

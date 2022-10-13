@@ -15,6 +15,7 @@
     "Snippets"
   ],
   "activationEvents": [
+    "onLanguage:fkl",
     "onCommand:vscode-fkl.helloWorld"
   ],
   "main": "./dist/extension.js",
@@ -22,8 +23,12 @@
     "languages": [
       {
         "id": "fkl",
-        "mimetypes": ["language/fkl"],
-        "filenamePatterns": ["*.fkl"],
+        "mimetypes": [
+          "language/fkl"
+        ],
+        "filenamePatterns": [
+          "*.fkl"
+        ],
         "aliases": [
           "fkl"
         ],
