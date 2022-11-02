@@ -1,0 +1,38 @@
+{
+    "comments": {
+        "blockComment": [
+            "/*",
+            "*/"
+        ],
+        "lineComment": "//"
+    },
+    "brackets": [
+        [
+            "(",
+            ")"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "{",
+            "}"
+        ]
+    ],
+    "colorizedBracketPairs": [
+        [
+            "(",
+            ")"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "{",
+            "}"
+        ]
+    ],
+    "wordPattern": "[a-zA-Z_\\x80-\\xFF][\\w\\x80-\\xFF]*",
+}

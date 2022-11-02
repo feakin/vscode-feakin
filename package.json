@@ -15,14 +15,34 @@
     "Snippets"
   ],
   "activationEvents": [
-    "onCommand:vscode-fkl.helloWorld"
+    "onLanguage:fkl",
+    "onLanguage:fkl"
   ],
   "main": "./dist/extension.js",
   "contributes": {
-    "commands": [
+    "languages": [
       {
-        "command": "vscode-fkl.helloWorld",
-        "title": "Hello World"
+        "id": "fkl",
+        "mimetypes": [
+          "language/fkl"
+        ],
+        "filenamePatterns": [
+          "*.fkl"
+        ],
+        "aliases": [
+          "fkl"
+        ],
+        "extensions": [
+          ".fkl"
+        ],
+        "configuration": "./defs/language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "fkl",
+        "scopeName": "source.fkl",
+        "path": "./defs/fkl.tmLanguage.json"
       }
     ]
   },
