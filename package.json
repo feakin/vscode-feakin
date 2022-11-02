@@ -16,7 +16,7 @@
   ],
   "activationEvents": [
     "onLanguage:fkl",
-    "onCommand:vscode-fkl.helloWorld"
+    "onLanguage:fkl"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -43,12 +43,6 @@
         "language": "fkl",
         "scopeName": "source.fkl",
         "path": "./defs/fkl.tmLanguage.json"
-      }
-    ],
-    "commands": [
-      {
-        "command": "vscode-fkl.helloWorld",
-        "title": "Hello World"
       }
     ]
   },

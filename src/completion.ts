@@ -6,8 +6,9 @@ import * as fs from "fs";
 export class FklCompletionItemProvider
   implements vscode.CompletionItemProvider
 {
-  constructor() {
-    console.log("??????????????????????????????");
+  output: vscode.OutputChannel;
+  constructor(output: vscode.OutputChannel) {
+    this.output = output;
   }
 
   public async provideCompletionItems(
@@ -15,7 +16,12 @@ export class FklCompletionItemProvider
     position: vscode.Position,
     token: vscode.CancellationToken
   ): Promise<vscode.CompletionItem[]> {
-    console.log("?????????");
+    this.output.appendLine("provideCompletionItems:");
+    this.output.appendLine("  document: " + document.fileName);
+    this.output.appendLine(
+      "  position: " + position.line + ", " + position.character
+    );
+
     return [
       {
         label: "hello",

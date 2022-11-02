@@ -1,12 +1,17 @@
 {
+  "$schema": "https://raw.githubusercontent.com/Septh/tmlanguage/master/tmLanguage.schema.json",
+
   "scopeName": "source.fkl",
   "name": "Feakin definition Language",
   "fileTypes": ["fkl"],
   "patterns": [
     { "include": "#block_comment" },
     { "include": "#line_comment" },
-    { "include": "#identifier" },
-    { "include": "#string" }
+    { "include": "#string" },
+    { "include": "#escape_sequence" },
+    { "include": "#symbols" },
+    { "include": "#keywords" },
+    { "include": "#identifier" }
   ],
   "repository": {
     "block_comment": {
@@ -315,6 +320,27 @@
           "match": "--",
           "name": "keyword.operator.connection.fkl"
         }
+      ]
+    },
+    "symbols": {
+      "patterns": [
+        { "include": "#comma" },
+        { "include": "#colon" },
+        { "include": "#double_colon" },
+        { "include": "#semicolon" },
+        { "include": "#left_brace" },
+        { "include": "#right_brace" },
+        { "include": "#equal" },
+        { "include": "#quota" },
+        { "include": "#left_parenthesis" },
+        { "include": "#right_parenthesis" },
+        { "include": "#less_than" },
+        { "include": "#greater_than" },
+        { "include": "#dot" },
+        { "include": "#right_arrow" },
+        { "include": "#left_arrow" },
+        { "include": "#double_side_arrow" },
+        { "include": "#connection" }
       ]
     },
     "keywords_general": {
