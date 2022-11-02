@@ -85,12 +85,3 @@ Entity Payment {
 
 ValueObject Price { }
 ValueObject Notifications { }
-
-
-ContextMap
-
-//
-/* */
-addw
-
-"dddd"

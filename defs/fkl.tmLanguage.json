@@ -142,7 +142,7 @@
     "identifier": {
       "patterns": [
         {
-          "name": "other.identifier.fkl",
+          "name": "variable.other.identifier.fkl",
           "match": "[_a-zA-Z][_a-zA-Z0-9]*"
         }
       ]
@@ -191,6 +191,22 @@
         {
           "match": ",",
           "name": "punctuation.separator.comma.fkl"
+        }
+      ]
+    },
+    "right_arrow": {
+      "patterns": [
+        {
+          "match": "->",
+          "name": "keyword.operator.right_arrow.fkl"
+        }
+      ]
+    },
+    "left_arrow": {
+      "patterns": [
+        {
+          "match": "<-",
+          "name": "keyword.operator.left_arrow.fkl"
         }
       ]
     },
@@ -250,59 +266,52 @@
         }
       ]
     },
-    "left_parenthesis": {
+
+    "parenthesis": {
       "patterns": [
         {
-          "match": "\\(",
-          "name": "punctuation.section.parens.begin.fkl"
+          "match": "(\\().*?(\\))",
+          "name": "punctuation.section.parens.group.fkl",
+          "captures": {
+            "1": {
+              "name": "punctuation.section.parens.begin.fkl"
+            },
+            "2": {
+              "name": "variable.parameter.fkl"
+            },
+            "3": {
+              "name": "punctuation.section.parens.end.fkl"
+            }
+          }
         }
       ]
     },
-    "right_parenthesis": {
+
+    "angle_brackets": {
       "patterns": [
         {
-          "match": "\\)",
-          "name": "punctuation.section.parens.end.fkl"
+          "match": "(\\<)(.*)(\\>)",
+          "name": "punctuation.section.parens.group.fkl",
+          "captures": {
+            "1": {
+              "name": "punctuation.section.parens.begin.fkl"
+            },
+            "2": {
+              "name": "variable.parameter.fkl"
+            },
+            "3": {
+              "name": "punctuation.section.parens.end.fkl"
+            }
+          }
         }
       ]
     },
-    "less_than": {
-      "patterns": [
-        {
-          "match": "<",
-          "name": "keyword.operator.comparison.fkl"
-        }
-      ]
-    },
-    "greater_than": {
-      "patterns": [
-        {
-          "match": ">",
-          "name": "keyword.operator.comparison.fkl"
-        }
-      ]
-    },
+
     "dot": {
       "patterns": [
         {
           "match": "\\.",
           "name": "punctuation.accessor.dot.fkl"
-        }
-      ]
-    },
-    "right_arrow": {
-      "patterns": [
-        {
-          "match": "->",
-          "name": "keyword.operator.arrow.fkl"
-        }
-      ]
-    },
-    "left_arrow": {
-      "patterns": [
-        {
-          "match": "<-",
-          "name": "keyword.operator.arrow.fkl"
         }
       ]
     },
@@ -324,29 +333,27 @@
     },
     "symbols": {
       "patterns": [
-        { "include": "#comma" },
-        { "include": "#colon" },
         { "include": "#double_colon" },
-        { "include": "#semicolon" },
-        { "include": "#left_brace" },
-        { "include": "#right_brace" },
-        { "include": "#equal" },
-        { "include": "#quota" },
-        { "include": "#left_parenthesis" },
-        { "include": "#right_parenthesis" },
-        { "include": "#less_than" },
-        { "include": "#greater_than" },
-        { "include": "#dot" },
         { "include": "#right_arrow" },
         { "include": "#left_arrow" },
         { "include": "#double_side_arrow" },
-        { "include": "#connection" }
+        { "include": "#connection" },
+        { "include": "#semicolon" },
+        { "include": "#left_brace" },
+        { "include": "#right_brace" },
+        { "include": "#quota" },
+        { "include": "#parenthesis" },
+        { "include": "#angle_brackets" },
+        { "include": "#equal" },
+        { "include": "#colon" },
+        { "include": "#comma" },
+        { "include": "#dot" }
       ]
     },
     "keywords_general": {
       "patterns": [
         {
-          "name": "keywords.general.fkl",
+          "name": "keyword.other.general.fkl",
           "match": "\\b(ContextMap|Context|Aggregate|Entity|ValueObject|Struct|impl|endpoint|request|response)\\b"
         }
       ]
@@ -354,7 +361,7 @@
     "keywords_request": {
       "patterns": [
         {
-          "name": "keywords.request.fkl",
+          "name": "keyword.control.request.fkl",
           "match": "\\b(POST|GET|PUT|DELETE|PATCH|HEAD|OPTIONS|TRACE|CONNECT|authorization)\\b"
         }
       ]
@@ -362,7 +369,7 @@
     "keywords_auth": {
       "patterns": [
         {
-          "name": "keywords.auth.fkl",
+          "name": "keyword.control.auth.fkl",
           "match": "\\b(Anonymous|Basic|Bearer|OAuth2|OpenIDConnect)\\b"
         }
       ]
@@ -370,7 +377,7 @@
     "keywords_flow": {
       "patterns": [
         {
-          "name": "keywords.flow.fkl",
+          "name": "keyword.other.flow.fkl",
           "match": "\b(flow|via|receive|send|from|to)\b"
         }
       ]
